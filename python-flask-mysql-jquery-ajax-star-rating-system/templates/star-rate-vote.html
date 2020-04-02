@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Star Rating/Voting System using Python Flask MySQL AJAX</title>
+		<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/blog_rating.js') }}"></script>
+		<link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename='css/blog_rating.css') }}"/>
+    </head>
+    <body>
+        <div class='singlepost'>
+            <div class='fullpost clearfix'>
+                <div class='entry'>
+                    <h1 class='post-title'>
+                        This is a sample blog content
+                    </h1>
+                    <p>
+                        Posted By: roytuts.com,  
+                        Posted On: 25-08-2015
+                    </p>
+                    <input type="hidden" name="blog_content_id" id="blog_content_id" value="1"/>
+					<div id="ajax_vote">
+						<div class="r">
+							<div class="rating">
+								{% if overall_rate > 0 %}							
+									{% for i in range(1, overall_rate + 1) %}
+										<div class="star" id="{{i}}"></div>
+									{% endfor %}							
+								{% endif %}
+							</div>
+							<div class="transparent">
+								<div class="star" id="1"></div>
+								<div class="star" id="2"></div>
+								<div class="star" id="3"></div>
+								<div class="star" id="4"></div>
+								<div class="star" id="5"></div>
+								<div class="votes">{{overall_dec_rate}}/5, {{overall_rows if overall_rows > 0 else 0}}  {{'votes' if overall_rows > 1 else 'vote' }} {% if ip_rate %}<strong>You rated this: <span style="color:#39C;">{{ip_rate}}</span></strong>{% endif %}</div>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<p style="text-align: justify;">
+						The topic of blogging seems to come up a lot in our social media training workshops. The benefits of a quality blog are obvious – fresh content is good for your readers and your rankings. Blogs are easy to set up and even easier to update. We often tell people that if they can use Microsoft Word… they can update a blog.
+
+						As easy as they are to set up, they can be difficult to maintain. A good blog is filled with relevant, timely content that is updated on a regular basis. New bloggers often start out with a bang but then fizzle out when they realize that creating content can be challenging.
+					</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
