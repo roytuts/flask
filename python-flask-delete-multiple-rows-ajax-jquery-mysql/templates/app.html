@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Multiple Table Rows Deletion Example in Python, Flask, AJAX, jQuery, MySQL</title>
+	<link type="text/css"  rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}"/>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+
+<div>
+	<h1>Multiple Table Rows Deletion Example in Python, Flask, AJAX, jQuery, MySQL</h1>
+
+	<div id="body">
+		{% if products %}
+			<div id="msg"></div>
+			<button id="delete_selected">Delete Selected Product(s)</button>
+			<table class="datatable">
+				<thead>
+					<tr>
+						<th><input id="check_all" type="checkbox"></th>
+						<th>ID</th>
+						<th>Code</th>
+						<th>Name</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for p in products %}
+						{% set row_class = ('even_col' if loop.index % 2 == 0 else 'odd_col') %}
+						<tr class="{{ row_class }}">
+							<td><input type="checkbox" name="row-check" value="{{ p['id'] }}"></td>
+							<td>{{ p['id'] }}</td>
+							<td>{{ p['code'] }}</td>
+							<td>{{ p['name'] }}</td>
+							<td>{{ p['price'] }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			{% else %}
+				<div style="color:red;"><p>No Record Found</p></div>
+		{% endif %}
+	</div>
+</div>
+
+</body>
+</html>
