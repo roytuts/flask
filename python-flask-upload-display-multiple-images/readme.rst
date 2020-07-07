@@ -1,0 +1,1 @@
+You can read tutorial https://www.roytuts.com/upload-and-display-multiple-images-using-python-and-flask/
