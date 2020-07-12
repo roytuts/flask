@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<title>Autocomplete input suggestion using Python and Flask</title>
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+	<script>
+		$(function() {
+			$("#searchBox").autocomplete({
+				source : function(request, response) {
+					$.ajax({
+						type: "POST",
+						url : "http://localhost:5000/search",
+						dataType : "json",
+						cache: false,
+						data : {
+							q : request.term
+						},
+						success : function(data) {
+							//alert(data);
+							//console.log(data);
+							response(data);
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							console.log(textStatus + " " + errorThrown);
+						}
+					});
+				},
+				minLength : 2
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="width: 600px; margin: auto;">
+		<h2>Autocomplete input suggestion using Python and Flask</h2>
+		<p style="width: 560px; margin: auto;">
+			<label>Search Here</label>&nbsp;&nbsp;<input type="text" name="search" id="searchBox"/>
+		</p>
+	</div>
+</body>
