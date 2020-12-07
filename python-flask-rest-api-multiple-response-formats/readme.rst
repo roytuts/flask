@@ -1,0 +1,1 @@
+You can read tutorial at https://roytuts.com/how-to-return-different-response-formats-json-xml-in-flask-rest-api/
