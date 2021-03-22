@@ -1,0 +1,1 @@
+You can go through the tutorial https://roytuts.com/query-parameter-in-rest-api-get-request-with-python-flask/
