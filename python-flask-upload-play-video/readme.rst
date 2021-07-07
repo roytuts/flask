@@ -1,0 +1,1 @@
+You can read tutorial at https://roytuts.com/upload-and-play-video-using-flask/
