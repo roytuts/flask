@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Python Flask - Reload Changes Without Server Restart</title>
+<h2>Reload Changes Without Server Restart in Flask</h2>
+
+<div>
+    <h1>User Details</h1>
+	{% for row in rows %}
+		<p>Id: {{ row['id']|safe }}</p>
+		<p>Name: {{ row['name']|safe }}</p>
+		<p>Email: {{ row['email']|safe }}</p>
+		<p>Phone: {{ row['phone']|safe }}</p>
+		<p>Address: {{ row['address']|safe }}</p>
+	{% endfor %}
+	<p/>
+</div>

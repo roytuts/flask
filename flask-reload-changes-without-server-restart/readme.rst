@@ -1,0 +1,1 @@
+You can read tutorial https://roytuts.com/reload-changes-in-flask-web-app-without-server-restart/
