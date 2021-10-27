@@ -1,1 +1,1 @@
-You can read tutorial https://roytuts.com/python-flask-cache-example/
+Please follow the tutorial https://roytuts.com/python-flask-cache-in-web-applications/
