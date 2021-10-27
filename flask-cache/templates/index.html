@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Python Flask Simple Caching</title>
+<h2>Simple Caching in Flask</h2>
+
+<div>
+	{% for row in rows %}
+		<p>Id: {{ row['id']|safe }}</p>
+		<p>Name: {{ row['name']|safe }}</p>
+		<p>Email: {{ row['email']|safe }}</p>
+		<p>Phone: {{ row['phone']|safe }}</p>
+		<p>Address: {{ row['address']|safe }}</p>
+	{% endfor %}
+	<p/>
+</div>
