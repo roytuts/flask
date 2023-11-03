@@ -1,1 +1,1 @@
-You can go through the tutorial https://roytuts.com/python-rest-api-crud-example-using-flask-and-mysql/
+Please follow the tutorial https://roytuts.com/python-rest-api-crud-example-using-flask-and-mysql/
