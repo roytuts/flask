@@ -1,0 +1,33 @@
+<!--{% with messages = get_flashed_messages() %}
+  {% if messages %}
+	<ul>
+	{% for message in messages %}
+	  <li>{{ message }}</li>
+	{% endfor %}
+	</ul>
+  {% endif %}
+{% endwith %}-->
+
+<!--<div>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	  {% if messages %}
+		<ul>
+		{% for category, message in messages %}
+		  <li class="{{ category }}">{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</div>-->
+
+<div>
+	{% with errors = get_flashed_messages(category_filter=["error"]) %}
+	  {% if errors %}
+		<ul>
+		{%- for msg in errors %}
+			<li>{{ msg }}</li>
+		{% endfor -%}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</div>
