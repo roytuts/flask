@@ -1,1 +1,1 @@
-You can read tutorial https://www.roytuts.com/upload-and-display-multiple-images-using-python-and-flask/
+Please follow the tutorial https://roytuts.com/upload-and-display-multiple-images-using-python-and-flask/
